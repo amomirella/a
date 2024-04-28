@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botão Fujão</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .container {
+    position: relative; /* Adicionado */
+    margin-top: 50px;
+  }
+  .message {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute; /* Adicionado */
+  }
+  .button-sim {
+    background-color: #28a745;
+  }
+  .button-nao {
+    background-color: #dc3545;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="message">Está pronta para viver o resto das nossas vidas juntos?</div>
+  <div class="buttons">
+    <button class="button button-sim" onclick="abrirLink()">Sim</button>
+    <button class="button button-nao" onclick="trocarPosicao()">Não</button>
+  </div>
+</div>
+
+<script>
+function trocarPosicao() {
+  var buttonNao = document.querySelector('.button-nao');
+  var container = document.querySelector('.container');
+  var randomNumberX = Math.random() * (container.clientWidth - buttonNao.offsetWidth);
+  var randomNumberY = Math.random() * (container.clientHeight - buttonNao.offsetHeight);
+  
+  buttonNao.style.left = randomNumberX + 'px';
+  buttonNao.style.top = randomNumberY + 'px';
+}
+
+function abrirLink() {
+  // Altere a URL abaixo para o link desejado
+  window.location.href = "https://youtu.be/8Go6dHuylyM?si=bmyjuwszKiTU-PMR";
+}
+</script>
+
+</body>
+</html>
